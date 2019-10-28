@@ -3,8 +3,8 @@ import './App.css'
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='App'>
+      <header className='App-header'>
         <h2>Testing</h2>
       </header>
       <main>

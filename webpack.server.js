@@ -1,8 +1,6 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 
-process.env.PORT = 3001
-
 module.exports = {
   entry: './server/index.js',
 
@@ -12,6 +10,7 @@ module.exports = {
 
   output: {
     path: path.resolve('server-build'),
+    publicPath: '/',
     filename: 'index.js'
   },
 
@@ -20,7 +19,10 @@ module.exports = {
       {
         test: /\.js$/,
         use: 'babel-loader'
+      }, {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
-};
+}

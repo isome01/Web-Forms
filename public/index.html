@@ -9,21 +9,19 @@
       name="description"
       content="Project for server side web-forms"
     />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
+    <title>Web Forms</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script src="//editor.unlayer.com/embed.js"></script>
-    <script>
-      unlayer.init({
-        id: 'editor-container',
-        projectId: 1234,
-        displayMode: 'email'
-      })
-    </script>
-    <div id="editor-container">
-      <div id="root"></div>
+    <div id="editor-container" style="width:100%;height:700px;">
+      <script>
+        unlayer.init({
+          id: 'editor-container',
+          projectId: 1234,
+          displayMode: 'email'
+        })
+      </script>
     </div>
   </body>
 </html>
