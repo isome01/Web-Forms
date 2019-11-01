@@ -1,27 +1,19 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-
+import {render} from './render'
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import {webform} from './webform'
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use("/public", express.static("./public"))
 
-app.use(express.static('./public'))
-
-app.get('/*', function (req, res) {
-
-  const index = path.resolve('./public/index.html')
-  fs.readFile(index, 'utf8', function (err, data) {
-    if (err) {
-      console.log(err)
-      return res.status(500).send('ERROR')
-    }
-
-    return res.send(data)
-  })
-})
+/* routes 'n such... */
+webform(app)
+render(app)
 
 const PORT = process.env.PORT || 5002
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log('Dev Express server running at localhost:' + PORT)
 })

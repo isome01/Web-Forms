@@ -4,24 +4,31 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@clearc2/c2-form": "^3.0.1",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
     "cors": "^2.8.5",
     "css-loader": "^3.2.0",
     "express": "^4.17.1",
+    "immutable": "^4.0.0-rc.12",
     "npm": "^6.12.0",
+    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-email-editor": "^1.0.0",
+    "react-redux": "^7.1.1",
     "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
     "style-loader": "^1.0.0",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "build-server": "webpack --config webpack.server.js --mode=production",
-    "start-server": "nodemon ./server/index.js",
+    "build-server": "webpack --config webpack.config.js --mode=production -w",
+    "start-server": "nodemon ./dist/server.bundle.js",
     "start": "concurrently \"npm run build-server\" \"npm run start-server"
   },
   "eslintConfig": {

@@ -1,17 +1,14 @@
-import React from 'react'
-import './App.css'
+import React, {Component} from 'react'
+import Webform from './Webform'
+import {appStyles} from './app.styles.js'
 
-const App = () => {
+/* App Wrapper: */
+
+const App = ({props}) => {
+  const [editor, setEditor] = React.useState({})
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h2>Testing</h2>
-      </header>
-      <main>
-        <div>
-
-        </div>
-      </main>
+    <div style={appStyles['app']}>
+      <Webform />
     </div>
   )
 }
